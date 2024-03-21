@@ -1,0 +1,15 @@
+<div
+  class="card flex flex-column gap-3 justify-content-center align-items-center"
+>
+  <p-paginator
+    [first]="first"
+    [rows]="1"
+    [totalRecords]="10"
+    (onPageChange)="onPageChange($event)"
+    [showJumpToPageDropdown]="true"
+    [showPageLinks]="false"
+  ></p-paginator>
+
+  <img width="750" class="my-3" src="./assets/images{{ first + 1 }}.webp" />
+</div>
+

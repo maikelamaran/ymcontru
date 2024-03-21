@@ -1,0 +1,75 @@
+<section class="todolist-wrapper">
+  <h1 class="title">SOLICITUD</h1>
+  <form [formGroup]="formulario">
+    <div class="new-todo">
+      <ul class="todolist">
+        <li class="todo">
+          <div class="campo-form">
+            <input
+              type="text"
+              placeholder="Nombre y Apellidos"
+              formControlName="nombre"
+              [ngModel]="nombrecompleto()"
+              (ngModelChange)="nombrecompleto.set($event)"
+              name="nombrecompleto"
+            />
+            <div
+              *ngIf="
+                formulario.get('nombre')?.invalid &&
+                formulario.get('nombre')?.touched
+              "
+              class="mensaje-error"
+            >
+              Debes ingresar un nombre
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="campo-form">
+            <input
+              type="text"
+              placeholder="Direccion a arreglar"
+              formControlName="direccion"
+              [ngModel]="direccion()"
+              (ngModelChange)="direccion.set($event)"
+              name="direccion"
+            />
+            <div
+              *ngIf="
+                formulario.get('direccion')?.invalid &&
+                formulario.get('direccion')?.touched
+              "
+              class="mensaje-error"
+            >
+              Debes ingresar una dirección.
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="campo-form">
+            <input
+              type="text"
+              placeholder="Telefono"
+              formControlName="telefono"
+              [ngModel]="telefono()"
+              (ngModelChange)="telefono.set($event)"
+              name="telefono"
+            />
+            <div
+              *ngIf="
+                formulario.get('telefono')?.invalid &&
+                formulario.get('telefono')?.touched
+              "
+              class="mensaje-error"
+            >
+              Debes ingresar un teléfono.
+            </div>
+          </div>
+        </li>
+
+        <button class="text-red-500" (click)="enviarSolicitud()">Enviar</button>
+        <!-- <a href="{{url}}"> <p class="flex items-center text-red-500 h-full">Solicitar</p></a> -->
+      </ul>
+    </div>
+  </form>
+</section>

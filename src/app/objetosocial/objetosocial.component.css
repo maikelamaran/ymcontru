@@ -1,0 +1,9 @@
+.todolist {
+    @apply flex flex-col gap-1;
+  }
+  .todolist li {
+    @apply flex bg-background-300 px-4 py-2 rounded-lg items-center gap-2;
+  }
+  .todolist-wrapper {
+    @apply bg-background-200 p-8 w-fit mt-8 mx-auto rounded-lg;
+  }

@@ -1,0 +1,12 @@
+
+
+<div class="trabajadores" >
+    <div *ngFor="let item of trabajadores">
+    <p-card class="card-imagenes" header="{{item.nombre}} {{item.apellido}}" subheader="{{item.cargo}}" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img class="img-pequena" alt="Card" src="./assets/{{ item.nombre | lowercase }}.jpeg" />
+        </ng-template>
+      
+        </p-card>
+    </div>
+</div>
